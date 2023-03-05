@@ -3,22 +3,25 @@ import Login from "./Components/Login";
 import Header from "./Components/Header";
 import { useState } from "react";
 import Dashboard from "./Components/Dashboard";
+import Router from "./Router";
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  // const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  function renderMarkup() {
-    if (isLoggedIn === true) {
-      return <Dashboard />;
-    } else {
-      return <Login handleClick={setIsLoggedIn} />;
-    }
-  }
+  // function renderMarkup() {
+  //   if (isLoggedIn === true) {
+  //     return <Dashboard />;
+  //   } else {
+  //     return <Login handleClick={setIsLoggedIn} />;
+  //   }
+  // }
 
   return (
     <div className="App" style={divStyle}>
       <Header />
-      {renderMarkup()}
+      {/* <Login /> */}
+      {/* {renderMarkup()} */}
+      <Router />
     </div>
   );
 }

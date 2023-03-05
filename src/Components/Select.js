@@ -8,11 +8,12 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 
-export default function SelectCard() {
+export default function SelectCard(props) {
   const [age, setAge] = React.useState("");
 
   const handleChange = (event) => {
     setAge(event.target.value);
+    props.setQuality(event.target.value);
   };
 
   return (

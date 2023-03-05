@@ -5,7 +5,7 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import Slider from "@mui/material/Slider";
 
-export default function SliderCard() {
+export default function SliderCard(props) {
   return (
     <Card sx={{ maxWidth: 275 }}>
       <CardContent>
@@ -27,21 +27,11 @@ export default function SliderCard() {
           max={10}
           valueLabelDisplay="autoS"
           style={{ margin: "20px" }}
+          onChange={(event) => {
+            props.setVolume(event.target.value);
+          }}
         />
       </CardActions>
     </Card>
   );
-}
-
-{
-  /* <Slider
-      aria-label="Small steps"
-      defaultValue={0.00000005}
-      getAriaValueText={valuetext}
-      step={0.00000001}
-      marks
-      min={-0.00000005}
-      max={0.0000001}
-      valueLabelDisplay="auto"
-    /> */
 }

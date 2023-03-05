@@ -1,5 +1,5 @@
 import * as React from "react";
-import '../onlineMode.css'
+import "../onlineMode.css";
 // import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
@@ -8,7 +8,7 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import Switch from "@mui/material/Switch";
 
-export default function OnlineMode() {
+export default function OnlineMode(props) {
   return (
     <Card sx={{ maxWidth: 275 }}>
       <CardContent>
@@ -20,7 +20,11 @@ export default function OnlineMode() {
         </Typography>
       </CardContent>
       <CardActions>
-        <Switch />
+        <Switch
+          onClick={() => {
+            props.setOnline(!props.online);
+          }}
+        />
       </CardActions>
     </Card>
   );
